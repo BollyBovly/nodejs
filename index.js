@@ -9,19 +9,17 @@ const isPrime = (number) => {
     return true;
 }
 
-
 let count = 1;
 
 const from = process.argv[2];
 const to = process.argv[3];
 
-if (typeof isPrime(number) !== Number){
-    console.log('Nope');
-}
+// if (typeof isPrime() !== Number) {
+//     console.log('it is not a number mf');
+// }
 
 for (let number = from; number <= to; number++) {
     let colorer = color.green;
-
     if (isPrime(number)) {
         if (count % 2 === 0) {
             colorer = color.yellow;
@@ -29,11 +27,11 @@ for (let number = from; number <= to; number++) {
         }else if (count % 3 === 0) {
             colorer = color.red;
             count = 1;
+        }else if (typeof isPrime() !== Number) {
+            console.log('it is not a number mf');
         }else {
             count += 1;
         }
         console.log(colorer(number));
-        
     }
-    
 }
